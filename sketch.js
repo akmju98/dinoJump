@@ -104,6 +104,12 @@ function GameOver() {
    obstacles.push(O);
  }
 
+function newObs2() {
+   var size = random(35, 45);
+   var O = new Obs(size);
+   obstacles.push(O);
+ }
+
 function keyPressed() {
   if (keyCode == ENTER && !game){
     obstacles = [];
@@ -117,6 +123,10 @@ function control() {
   if(y + 25 < 175){
     yvel += 1;
     onGround = false;
+  }
+  else if(y + 25 < 175){
+    yvel += 10;
+    onGround = true;
   }
   else {
     yvel = 0;
